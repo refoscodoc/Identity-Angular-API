@@ -14,7 +14,9 @@ var connectionString = builder.Configuration.GetConnectionString("DataAccessMySq
 var serverVersion = new MySqlServerVersion(new Version(10, 6, 7));
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite(connectionString));
+    options.UseMySql(
+        connectionString, serverVersion)
+);
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
