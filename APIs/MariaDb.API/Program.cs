@@ -1,3 +1,6 @@
+using MariaDb.API.DataAccess;
+using MariaDb.API.DataAccess.Interfaces;
+using MariaDb.API.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +10,14 @@ builder.Services.AddRazorPages();
 
 var sqlConnectionString = builder.Configuration.GetConnectionString("DataAccessMySqlProvider");
 var serverVersion = new MySqlServerVersion(new Version(10, 6, 7));
+
+builder.Services.AddDbContext<MariaDbDataAccess>(options =>
+    options.UseMySql(
+        sqlConnectionString, serverVersion)
+);
+
+builder.Services.AddTransient<IMariaDbDataAccessProviderProduct, MariaDbDataAccessProviderProduct>();
+builder.Services.AddScoped<BusinessProvider>();
 
 var app = builder.Build();
 
