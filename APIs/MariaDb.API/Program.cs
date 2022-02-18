@@ -5,8 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddRazorPages();
+// builder.Services.AddRazorPages();
 
 var sqlConnectionString = builder.Configuration.GetConnectionString("DataAccessMySqlProvider");
 var serverVersion = new MySqlServerVersion(new Version(10, 6, 7));
@@ -17,7 +16,12 @@ builder.Services.AddDbContext<MariaDbDataAccess>(options =>
 );
 
 builder.Services.AddTransient<IMariaDbDataAccessProviderProduct, MariaDbDataAccessProviderProduct>();
+builder.Services.AddTransient<IMariaDbDataAccessProviderUser, MariaDbDataAccessProviderUser>();
 builder.Services.AddScoped<BusinessProvider>();
+
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
@@ -29,6 +33,13 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -36,6 +47,7 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapRazorPages();
+// app.MapRazorPages();
+app.MapControllers();
 
 app.Run();

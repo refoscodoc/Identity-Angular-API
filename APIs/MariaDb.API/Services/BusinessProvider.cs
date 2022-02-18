@@ -14,12 +14,12 @@ public class BusinessProvider
         _dataAccessProducts = dataAccessProducts;
     }
 
-    public async Task<object?> GetProduct(Guid id)
+    public async Task<ProductModel> GetProduct(Guid id)
     {
         return await _dataAccessProducts.GetProduct(id);
     }
 
-    public async Task<object?> AddProduct(ProductModel product)
+    public async Task<ProductModel> AddProduct(ProductModel product)
     {
         var newProduct = new ProductModel 
         {

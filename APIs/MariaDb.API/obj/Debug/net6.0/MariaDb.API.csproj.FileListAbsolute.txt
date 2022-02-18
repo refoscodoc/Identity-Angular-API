@@ -33,3 +33,8 @@
 /home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MariaDb.API/obj/Debug/net6.0/ref/MariaDb.API.dll
 /home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MariaDb.API/obj/Debug/net6.0/MariaDb.API.pdb
 /home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MariaDb.API/obj/Debug/net6.0/MariaDb.API.genruntimeconfig.cache
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MariaDb.API/bin/Debug/net6.0/Microsoft.OpenApi.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MariaDb.API/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MariaDb.API/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MariaDb.API/obj/Debug/net6.0/MariaDb.API.MvcApplicationPartsAssemblyInfo.cs
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MariaDb.API/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
