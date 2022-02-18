@@ -10,4 +10,5 @@ public class ProductModel
     public string Manufacturer { get; set; }
     public ushort Category { get; set; }
     public ushort Quantity { get; set; }
+    public decimal PriceTag { get; set; }
 }

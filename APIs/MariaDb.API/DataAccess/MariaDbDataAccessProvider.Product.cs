@@ -34,4 +34,14 @@ public class MariaDbDataAccessProviderProduct : IMariaDbDataAccessProviderProduc
         await _context.SaveChangesAsync();
         return product;
     }
+
+    public Task<ProductModel> DeleteProduct(Guid id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<ProductModel> UpdateProduct(Guid productId, ProductModel product)
+    {
+        throw new NotImplementedException();
+    }
 }
