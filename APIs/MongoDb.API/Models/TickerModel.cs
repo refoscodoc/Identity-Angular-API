@@ -7,8 +7,10 @@ public class TickerModel
 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
-    public Guid TickerId { get; set; }
+    public ObjectId? Id { get; set; }
     public string Company { get; set; }
-    public double Value { get; set; }
+    public decimal Value { get; set; }
+    
+    [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
     public DateTime Date { get; set; }
 }

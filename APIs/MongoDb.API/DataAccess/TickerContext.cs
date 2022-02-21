@@ -1,10 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using MongoDb.API.Models;
+using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace MongoDb.API.DataAccess;
 
-public class TickerContext : DbContext
+public class TickerContext
 {
     public TickerContext(IConfiguration configuration)
     {
@@ -34,21 +35,21 @@ public class TickerContext : DbContext
         {
             new TickerModel()
             {
-                TickerId = Guid.NewGuid(),
+                Id = ObjectId.GenerateNewId(),
                 Company = "Sony",
                 Date = DateTime.Today,
                 Value = rnd.Next()
             },
             new TickerModel()
             {
-                TickerId = Guid.NewGuid(),
+                Id = ObjectId.GenerateNewId(),
                 Company = "Sony",
                 Date = DateTime.Today.AddDays(-1),
                 Value = rnd.Next()
             },
             new TickerModel()
             {
-                TickerId = Guid.NewGuid(),
+                Id = ObjectId.GenerateNewId(),
                 Company = "Sony",
                 Date = DateTime.Today.AddDays(-2),
                 Value = rnd.Next()

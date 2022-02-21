@@ -3,6 +3,11 @@ using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddHttpClient("MongoDbApi", client =>
+{
+    client.BaseAddress = new Uri("http://localhost:5002/"); // MongoDb.API port
+});
+
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddAuthentication(options =>
@@ -40,12 +45,23 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
-
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller}/{action=Index}/{id?}");
 
+// app.UseSpa(spa =>
+// {
+//     // To learn more about options for serving an Angular SPA from ASP.NET Core,
+//     // see https://go.microsoft.com/fwlink/?linkid=864501
+//
+//     spa.Options.SourcePath = "ClientApp";
+//
+//     if (env.IsDevelopment())
+//     {
+//         spa.UseAngularCliServer(npmScript: "start");
+//     }
+// });
+
 app.MapFallbackToFile("index.html");
-;
 
 app.Run();

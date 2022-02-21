@@ -45,3 +45,7 @@
 /home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MongoDb.API/bin/Debug/net6.0/runtimes/linux/native/libmongocrypt.so
 /home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MongoDb.API/bin/Debug/net6.0/runtimes/osx/native/libmongocrypt.dylib
 /home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MongoDb.API/bin/Debug/net6.0/runtimes/win/native/mongocrypt.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MongoDb.API/bin/Debug/net6.0/Microsoft.OpenApi.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MongoDb.API/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MongoDb.API/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MongoDb.API/obj/Debug/net6.0/MongoDb.API.MvcApplicationPartsAssemblyInfo.cs
