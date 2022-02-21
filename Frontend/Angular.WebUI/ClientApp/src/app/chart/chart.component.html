@@ -1,12 +1,13 @@
-<div style="display: block">
-  <canvas mdbChart
-          [chartType]="chartType"
-          [datasets]="chartDatasets"
-          [labels]="chartLabels"
-          [colors]="chartColors"
-          [options]="chartOptions"
-          [legend]="true"
-          (chartHover)="chartHovered($event)"
-          (chartClick)="chartClicked($event)">
-  </canvas>
-</div>
+<ngx-charts-bar-vertical
+  [view]="[1000,400]"
+  [results]="tickerMockData"
+  [xAxisLabel]="'Products'"
+  [legendTitle]="'Product Sale Chart'"
+  [yAxisLabel]="'Sale'"
+  [legend]="true"
+  [showXAxisLabel]="true"
+  [showYAxisLabel]="true"
+  [xAxis]="true"
+  [yAxis]="true"
+  [gradient]="true">
+</ngx-charts-bar-vertical>
