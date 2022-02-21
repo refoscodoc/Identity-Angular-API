@@ -42,7 +42,7 @@ builder.Services.AddIdentityServer()
 builder.Services.AddAuthentication()
     .AddIdentityServerJwt();
 
-builder.Services.AddControllersWithViews();
+// builder.Services.AddControllersWithViews();
 // builder.Services.AddRazorPages();
 
 var app = builder.Build();
