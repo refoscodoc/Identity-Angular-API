@@ -38,3 +38,10 @@
 /home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MariaDb.API/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MariaDb.API/obj/Debug/net6.0/MariaDb.API.MvcApplicationPartsAssemblyInfo.cs
 /home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MariaDb.API/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MariaDb.API/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MariaDb.API/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MariaDb.API/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MariaDb.API/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MariaDb.API/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MariaDb.API/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MariaDb.API/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll

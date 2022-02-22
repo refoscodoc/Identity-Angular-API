@@ -11,7 +11,7 @@ import { TickerModel } from "../mongoDbService/tickerModel";
 
 export class TickerComponent {
 
-  manufacturer: string = "sony";
+  manufacturer: string = "Sony";
 
   @Output()
   tickers: TickerModel[] = [];

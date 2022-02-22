@@ -12,7 +12,8 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { TickerComponent } from './ticker/ticker.component';
 import { ChartComponent } from './chart/chart.component';
-import { MongoDbService } from "./mongoDbService/MongoDbService";
+import {MongoDbService} from "./mongoDbService/MongoDbService";
+// import { MongoDbService } from "./mongoDbService/MongoDbService";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { MongoDbService } from "./mongoDbService/MongoDbService";
     FetchDataComponent,
     TickerComponent,
     ChartComponent,
-    MongoDbService
+    // MongoDbService
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -37,7 +38,7 @@ import { MongoDbService } from "./mongoDbService/MongoDbService";
       { path: 'ticker', component: TickerComponent },
     ])
   ],
-  providers: [],
+  providers: [MongoDbService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

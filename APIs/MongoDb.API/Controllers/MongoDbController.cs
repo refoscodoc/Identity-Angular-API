@@ -11,6 +11,7 @@ namespace MongoDb.API.Controllers;
 public class MongoDbController : Controller
 {
     // private readonly HttpClient _httpClient;
+    
     private readonly ILogger<MongoDbController> _logger;
 
     private readonly BusinessProvider _business;
@@ -47,8 +48,6 @@ public class MongoDbController : Controller
         {
             return BadRequest();
         }
-
-        Console.WriteLine(ticker);
         
         var result = await _business.PostNewTicker(ticker);
 

@@ -10,7 +10,7 @@ builder.Services.AddScoped<TickerContext>();
 builder.Services.AddScoped<BusinessProvider>();
 
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(x => x.AllowEmptyInputInBodyModelBinding = true);
 
 var app = builder.Build();
 

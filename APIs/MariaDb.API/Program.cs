@@ -3,6 +3,8 @@ using MariaDb.API.DataAccess.Interfaces;
 using MariaDb.API.Services;
 using Microsoft.EntityFrameworkCore;
 
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // builder.Services.AddRazorPages();
@@ -18,6 +20,27 @@ builder.Services.AddDbContext<MariaDbDataAccess>(options =>
 builder.Services.AddTransient<IMariaDbDataAccessProviderProduct, MariaDbDataAccessProviderProduct>();
 builder.Services.AddTransient<IMariaDbDataAccessProviderUser, MariaDbDataAccessProviderUser>();
 builder.Services.AddScoped<BusinessProvider>();
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(o =>
+{
+    o.Authority = builder.Configuration["IdentityServerAddress"];
+    o.Audience = "apiApp";
+    o.RequireHttpsMetadata = false;
+});
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("default", policy =>
+    {
+        policy.WithOrigins(builder.Configuration["ClientAddress"])
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
