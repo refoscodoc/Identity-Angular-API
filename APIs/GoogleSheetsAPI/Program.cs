@@ -1,7 +1,21 @@
+using GoogleSheetsAPI;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;
+using MongoDb.API.DataAccess;
+using MongoDb.API.Services;
+using Newtonsoft.Json;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScoped<GoogleSheets>();
+builder.Services.AddScoped<BusinessProvider>();
+builder.Services.AddScoped<TickerContext>();
+
+builder.Services.AddControllers()
+    .AddNewtonsoftJson(options =>
+    {
+        options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+    }); 
 
 builder.Services.AddAuthentication(options =>
     {
@@ -28,8 +42,16 @@ builder.Services.AddAuthentication(options =>
         options.AuthorizationEndpoint += "?prompt=consent";
     });
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder => {
+        builder.WithOrigins("https://localhost","https://accounts.google.com")
+            .AllowAnyHeader().AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
+app.MapControllers();
 
 app.Run();

@@ -58,3 +58,7 @@
 /home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/GoogleSheetsAPI/obj/Debug/net6.0/ref/GoogleSheetsAPI.dll
 /home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/GoogleSheetsAPI/obj/Debug/net6.0/GoogleSheetsAPI.pdb
 /home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/GoogleSheetsAPI/obj/Debug/net6.0/GoogleSheetsAPI.genruntimeconfig.cache
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/GoogleSheetsAPI/bin/Debug/net6.0/Microsoft.AspNetCore.JsonPatch.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/GoogleSheetsAPI/bin/Debug/net6.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/GoogleSheetsAPI/bin/Debug/net6.0/Newtonsoft.Json.Bson.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/GoogleSheetsAPI/bin/Debug/net6.0/client_secrets_nope.json

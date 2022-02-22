@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using MongoDb.API.DataAccess;
 using MongoDb.API.Models;
 using MongoDB.Bson;
@@ -13,9 +14,8 @@ public class BusinessProvider
     {
         _context = context ?? throw new ArgumentNullException(nameof(context));
     }
-    public async Task<IEnumerable<TickerModel>> GetAllTickers(string company)
+    public async Task<IEnumerable<TickerModel>> GetAllTickersByBrand(string company)
     {
-        // return await _context.Tickers.Find(t => t.Company == company).ToListAsync();
         return await _context.Tickers.Find(t => t.Company == company).ToListAsync();
     }
 
@@ -32,5 +32,10 @@ public class BusinessProvider
         await _context.Tickers.InsertOneAsync(newTicker);
 
         return newTicker;
+    }
+    
+    public async Task<IEnumerable<TickerModel>> GetAllTickers()
+    {
+        return await _context.Tickers.Find(_ => true).ToListAsync();
     }
 }

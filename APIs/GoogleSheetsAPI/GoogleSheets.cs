@@ -1,3 +1,4 @@
+using System.Globalization;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Sheets.v4;
 using Google.Apis.Sheets.v4.Data;
@@ -16,10 +17,16 @@ public class GoogleSheets
     static readonly string SpreadsheetId = "1Ci0TBlU1anYDbh2lQDX1SjEdGVFtEeMuYs0-3KO6wPA";
     private static readonly string sheet = "Tickers";
     private static SheetsService service;
-    
+
+    public GoogleSheets(BusinessProvider businessProvider)
+    {
+        _businessProvider = businessProvider;
+    }
+
     static void XlsInitialization()
     {
         GoogleCredential credential;
+        
         using (var stream = new FileStream("client_secrets.json", FileMode.Open, FileAccess.Read))
         {
             credential = GoogleCredential.FromStream(stream)
@@ -33,10 +40,37 @@ public class GoogleSheets
         });
     }
 
-    public async Task<IEnumerable<TickerModel>> PopulateFromXls()
+    public async Task<TickerModel> PopulateFromXls()
     {
         XlsInitialization();
             
+        var range = $"{sheet}!A:D";
+        var request = service.Spreadsheets.Values.Get(SpreadsheetId, range);
+
+        var response = request.Execute();
+        var values = response.Values;
+
+        if (values != null && values.Count > 0)
+        {
+            foreach (var row in values)
+            {
+                var result = new TickerModel
+                {
+                    Id = ObjectId.GenerateNewId(),
+                    Company = row[1].ToString(),
+                    Value = Decimal.Parse(row[2].ToString()),
+                    Date = DateTime.Parse(row[3].ToString()),
+                };
+                    
+                await _businessProvider.PostNewTicker(result);
+            }
+        }
+            
+        return null;
+    }
+
+    public async Task<IEnumerable<TickerModel>> ReadXlsEntries()
+    {
         var range = $"{sheet}!A:D";
         var request = service.Spreadsheets.Values.Get(SpreadsheetId, range);
 
@@ -49,51 +83,35 @@ public class GoogleSheets
         {
             foreach (var row in values)
             {
-                var result = new TickerModel
-                {
-                    Id = ObjectId.Parse(row[0].ToString()),
-                    Company = row[1].ToString(),
-                    Value = (decimal)row[2],
-                    Date = DateTime.Parse(row[3].ToString()),
-                };
-                    
-                await _businessProvider.PostNewTicker(result);
-            }
-        }
-            
-        return results;
-    }
-
-    public void ReadXlsEntries()
-    {
-        var range = $"{sheet}!A:D";
-        var request = service.Spreadsheets.Values.Get(SpreadsheetId, range);
-
-        var response = request.Execute();
-        var values = response.Values;
-        if (values != null && values.Count > 0)
-        {
-            foreach (var row in values)
-            {
                 Console.Write("{0} {1} | {2} {3}", row[0], row[1], row[2], row[3]);
                 // here i should read from the xls and populate the mongoDb with the business provider
             }
         }
+
+        return results;
     }
 
-    public void CreateXlsEntry(TickerModel result)
+    public async Task<TickerModel> FetchAllFromMongo()
     {
         XlsInitialization();
+        
+        IEnumerable<TickerModel> mongoList = await _businessProvider.GetAllTickers();
+
         var range = $"{sheet}!A:D";
         var valueRange = new ValueRange();
 
-        var objectList = new List<object>() { result.Id, result.Company, result.Value, result.Date.ToString() }; // have to add every column item as they'll compose the object to be inserted
-        valueRange.Values = new List<IList<object>> {objectList};
+        foreach (var result in mongoList)
+        {
+            var objectList = new List<object>() { result.Id, result.Company, result.Value, result.Date.ToString() }; // have to add every column item as they'll compose the object to be inserted
+            valueRange.Values = new List<IList<object>> {objectList};
+            
+            var appendRequest = service.Spreadsheets.Values.Append(valueRange, SpreadsheetId, range);
+            appendRequest.ValueInputOption =
+                SpreadsheetsResource.ValuesResource.AppendRequest.ValueInputOptionEnum.USERENTERED;
+            var appendResponse = appendRequest.Execute();
+        }
 
-        var appendRequest = service.Spreadsheets.Values.Append(valueRange, SpreadsheetId, range);
-        appendRequest.ValueInputOption =
-            SpreadsheetsResource.ValuesResource.AppendRequest.ValueInputOptionEnum.USERENTERED;
-        var appendResponse = appendRequest.Execute();
+        return null;
     }
 
     public void UpdateXlsEntry()

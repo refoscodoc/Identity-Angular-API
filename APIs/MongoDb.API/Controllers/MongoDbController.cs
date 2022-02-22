@@ -11,7 +11,6 @@ namespace MongoDb.API.Controllers;
 public class MongoDbController : Controller
 {
     // private readonly HttpClient _httpClient;
-    
     private readonly ILogger<MongoDbController> _logger;
 
     private readonly BusinessProvider _business;
@@ -23,8 +22,15 @@ public class MongoDbController : Controller
         // _httpClient = clientFactory.CreateClient("MongoDbApi");
     }
 
+    [HttpGet]
+    public async Task<IActionResult> Get()
+    {
+        return Ok(await _business.GetAllTickers());
+    }
+    
+
     [HttpGet("{company}")]
-    public async Task<IActionResult> Get(string company)
+    public async Task<IActionResult> Get(string? company)
     {
         // gets all but by company. hence I need to pass an identifier to the api
         
@@ -33,7 +39,10 @@ public class MongoDbController : Controller
         // var content = await response.Content.ReadAsStringAsync();
         // var tickersList = JsonConvert.DeserializeObject<IEnumerable<TickerModel>>(content);
 
-        return Ok(await _business.GetAllTickers(company));
+        // if (company is not null || company != string.Empty)
+        // {
+            return Ok(await _business.GetAllTickersByBrand(company));
+        // }
     }
 
     [HttpPost]
