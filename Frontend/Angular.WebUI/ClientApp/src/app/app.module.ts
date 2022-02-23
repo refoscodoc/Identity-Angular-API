@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { NgxChartsModule }from '@swimlane/ngx-charts';
+import { HighchartsChartModule } from "highcharts-angular";
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -12,8 +12,7 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { TickerComponent } from './ticker/ticker.component';
 import { ChartComponent } from './chart/chart.component';
-import {MongoDbService} from "./mongoDbService/MongoDbService";
-// import { MongoDbService } from "./mongoDbService/MongoDbService";
+import { MongoDbService } from "./mongoDbService/mongoDbService";
 
 @NgModule({
   declarations: [
@@ -24,18 +23,19 @@ import {MongoDbService} from "./mongoDbService/MongoDbService";
     FetchDataComponent,
     TickerComponent,
     ChartComponent,
-    // MongoDbService
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-    NgxChartsModule,
+    HighchartsChartModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'nav-menu', component: NavMenuComponent },
       { path: 'ticker', component: TickerComponent },
+      { path: 'chart', component: ChartComponent },
     ])
   ],
   providers: [MongoDbService],

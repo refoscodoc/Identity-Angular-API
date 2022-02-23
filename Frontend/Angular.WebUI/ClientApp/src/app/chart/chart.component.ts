@@ -1,42 +1,58 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit} from "@angular/core";
+import * as Highcharts from "highcharts/highstock";
+import { Options } from "highcharts/highstock";
+
+import IndicatorsCore from "highcharts/indicators/indicators";
+import IndicatorZigzag from "highcharts/indicators/zigzag";
+import {DataService} from "../data.service";
+IndicatorsCore(Highcharts);
+IndicatorZigzag(Highcharts);
 
 @Component({
-  selector: 'chart',
+  selector: 'app-chart',
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.css']
 })
-export class ChartComponent {
+export class ChartComponent implements OnInit {
 
-  @Input() tickerData: any;
+  Highcharts: typeof Highcharts = Highcharts;
+  chartData: Array<number[]> = [[1546441200000, 1045], [1546527600000, 1016]];
+  constructor(private dataService: DataService) { }
 
-  // view: any[] = [700, 300];
-
-  // options
-  legend: boolean = true;
-  showLabels: boolean = true;
-  animations: boolean = true;
-  xAxis: boolean = true;
-  yAxis: boolean = true;
-  showYAxisLabel: boolean = true;
-  showXAxisLabel: boolean = true;
-  xAxisLabel: string = 'Year';
-  yAxisLabel: string = 'Population';
-  timeline: boolean = true;
-
-  constructor() {
-    Object.assign(this, this.tickerData);
+  ngOnInit() {
+    this.dataService.getData().subscribe(result => {
+      this.chartData = result.map(x => [new Date(x.date).getTime(), Number.parseFloat(x.value)])
+      this.chartOptions = {
+        series: [
+          {
+            type: "line",
+            id: "base",
+            pointInterval: 24 * 3600 * 1000,
+            data: this.chartData
+          },
+          {
+            type: "zigzag",
+            showInLegend: true,
+            linkedTo: "base"
+          }
+        ]
+      };
+    })
   }
 
-  onSelect(data: any): void {
-    console.log('Item clicked', JSON.parse(JSON.stringify(data)));
-  }
-
-  onActivate(data: any): void {
-    console.log('Activate', JSON.parse(JSON.stringify(data)));
-  }
-
-  onDeactivate(data: any): void {
-    console.log('Deactivate', JSON.parse(JSON.stringify(data)));
-  }
-
+  chartOptions: Options = {
+    series: [
+      {
+        type: "line",
+        id: "base",
+        pointInterval: 24 * 3600 * 1000,
+        data: this.chartData
+      },
+      {
+        type: "zigzag",
+        showInLegend: true,
+        linkedTo: "base"
+      }
+    ]
+  };
 }

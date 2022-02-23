@@ -1,5 +1,5 @@
-import { Component, Output } from '@angular/core';
-import { MongoDbService } from "../mongoDbService/MongoDbService";
+import { Component } from '@angular/core';
+import { MongoDbService } from "../mongoDbService/mongoDbService";
 
 import { TickerModel } from "../mongoDbService/tickerModel";
 
@@ -13,7 +13,6 @@ export class TickerComponent {
 
   manufacturer: string = "Sony";
 
-  @Output()
   tickers: TickerModel[] = [];
 
   loading: boolean = false;
@@ -30,6 +29,7 @@ export class TickerComponent {
         (response) => {                           //next() callback
           console.log('response received')
           this.tickers = response;
+          console.log(this.tickers);
         },
         (error) => {                              //error() callback
           console.error('Request failed with error')

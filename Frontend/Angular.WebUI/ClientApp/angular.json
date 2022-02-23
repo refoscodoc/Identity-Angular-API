@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Angular.WebUI": {
+    "AngularUI.App": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Angular.WebUI:build:production"
+              "browserTarget": "AngularUI.App:build:production"
             },
             "development": {
-              "browserTarget": "Angular.WebUI:build:development",
+              "browserTarget": "AngularUI.App:build:development",
               "proxyConfig": "proxy.conf.js"
             }
           },
@@ -81,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Angular.WebUI:build"
+            "browserTarget": "AngularUI.App:build"
           }
         },
         "test": {
@@ -129,5 +129,5 @@
       }
     }
   },
-  "defaultProject": "Angular.WebUI"
+  "defaultProject": "AngularUI.App"
 }
