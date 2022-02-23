@@ -1,0 +1,18 @@
+.main-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  background: #1a1e21;
+  border-radius: 12px;
+  padding: 12px;
+  color: #0077cc;
+  transition: 1s linear;
+}
+
+.main-bar:hover {
+  transition: 2s linear;
+  background: #055160;
+  color: #dc3545;
+}

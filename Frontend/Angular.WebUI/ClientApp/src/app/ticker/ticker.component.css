@@ -1,4 +1,10 @@
 #main-head{
-  background-color: cornflowerblue;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
   text-align: center;
+  width: 80vw;
+  height: 80vh;
 }

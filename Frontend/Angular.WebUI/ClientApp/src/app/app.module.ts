@@ -13,6 +13,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { TickerComponent } from './ticker/ticker.component';
 import { ChartComponent } from './chart/chart.component';
 import { MongoDbService } from "./mongoDbService/mongoDbService";
+import { SelectManufacturerComponent } from './select-manufacturer/select-manufacturer.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MongoDbService } from "./mongoDbService/mongoDbService";
     FetchDataComponent,
     TickerComponent,
     ChartComponent,
+    SelectManufacturerComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -36,6 +38,7 @@ import { MongoDbService } from "./mongoDbService/mongoDbService";
       { path: 'nav-menu', component: NavMenuComponent },
       { path: 'ticker', component: TickerComponent },
       { path: 'chart', component: ChartComponent },
+      { path: 'app-select-manufacturer', component: SelectManufacturerComponent },
     ])
   ],
   providers: [MongoDbService],

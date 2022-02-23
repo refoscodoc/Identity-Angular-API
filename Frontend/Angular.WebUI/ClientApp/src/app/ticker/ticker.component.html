@@ -1,7 +1,10 @@
 <div id="main-head" style="text-align:center">
-  <h1>
-    Welcome to the TickerApp!
-  </h1>
-  <app-chart></app-chart>
+  <div class="ticker-left">
+    <h1>
+      Welcome to the TickerApp!
+    </h1>
+    <app-chart [chartData]="chartData" [chartOptions]="chartOptions"></app-chart>
+  </div>
+  <app-select-manufacturer class="ticker-right"></app-select-manufacturer>
 </div>
 
