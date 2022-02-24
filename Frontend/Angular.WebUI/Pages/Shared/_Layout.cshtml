@@ -1,0 +1,29 @@
+@page
+@model Angular.WebUI.Pages.Shared._Layout
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en-EN">
+<head>
+    <title></title>
+</head>
+<body>
+<ul class="navbar-nav flex-grow-1">
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+    </li>
+    
+    <!-- Add this item to the list -->
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-page="/Signout">Signout</a>
+    </li>
+</ul>
+</body>
+</html>

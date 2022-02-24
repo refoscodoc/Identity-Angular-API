@@ -1,41 +1,46 @@
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using System.IdentityModel.Tokens.Jwt;
+using Angular.WebUI;
+
+IdentityToken.RequestToken();
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddRazorPages();
+
 builder.Services.AddHttpClient("MongoDbApi", client =>
 {
-    client.BaseAddress = new Uri("http://localhost:5002/"); // MongoDb.API port
+    client.BaseAddress = new Uri("https://localhost:5002/"); // MongoDb.API port
 });
 
-builder.Services.AddCors(p => p.AddPolicy("corspolicy", builder =>
-{
-    builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
-}));
+// builder.Services.AddCors(p => p.AddPolicy("corspolicy", builder =>
+// {
+//     builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+// }));
 
 builder.Services.AddControllersWithViews();
 
-// builder.Services.AddAuthentication(options =>
-//     {
-//         options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-//         options.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
-//     })
-//     .AddCookie()
-//     .AddOpenIdConnect(options =>
-//     {
-//         options.Authority = builder.Configuration["IdentityServerAddress"];
-//         options.RequireHttpsMetadata = false;
-//
-//         options.ClientId = "mvc";
-//         options.ClientSecret = "secret";
-//
-//         options.ResponseType = "code id_token";
-//         options.Scope.Add("apiApp");
-//         options.Scope.Add("offline_access");
-//
-//         options.GetClaimsFromUserInfoEndpoint = true;
-//         options.SaveTokens = true;
-//     });
+JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
+
+builder.Services.AddAuthentication(options =>
+    {
+        options.DefaultScheme = "Cookies";
+        options.DefaultChallengeScheme = "oidc";
+    })
+    .AddCookie("Cookies")
+    .AddOpenIdConnect("oidc", options =>
+    {
+        options.Authority = "https://localhost:5003";
+
+        options.ClientId = "web";
+        options.ClientSecret = "secret";
+        options.ResponseType = "code";
+
+        options.Scope.Clear();
+        options.Scope.Add("openid");
+        options.Scope.Add("profile");
+
+        options.SaveTokens = true;
+    });
 
 var app = builder.Build();
 
@@ -46,11 +51,16 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseCors("corspolicy");
+// app.UseCors("corspolicy");
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapRazorPages().RequireAuthorization();
 
 app.MapControllerRoute(
     name: "default",
