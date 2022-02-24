@@ -9,8 +9,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<TickerContext>();
 builder.Services.AddScoped<BusinessProvider>();
 
-
 builder.Services.AddControllers(x => x.AllowEmptyInputInBodyModelBinding = true);
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+//services cors
+builder.Services.AddCors(p => p.AddPolicy("corspolicy", builder =>
+{
+    builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+}));
 
 var app = builder.Build();
 
@@ -22,12 +29,13 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseCors("corspolicy");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
+// app.UseAuthorization();
 
 // app.MapRazorPages();
 app.MapControllers();

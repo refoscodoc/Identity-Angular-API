@@ -8,29 +8,34 @@ builder.Services.AddHttpClient("MongoDbApi", client =>
     client.BaseAddress = new Uri("http://localhost:5002/"); // MongoDb.API port
 });
 
+builder.Services.AddCors(p => p.AddPolicy("corspolicy", builder =>
+{
+    builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+}));
+
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddAuthentication(options =>
-    {
-        options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-        options.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
-    })
-    .AddCookie()
-    .AddOpenIdConnect(options =>
-    {
-        options.Authority = builder.Configuration["IdentityServerAddress"];
-        options.RequireHttpsMetadata = false;
-
-        options.ClientId = "mvc";
-        options.ClientSecret = "secret";
-
-        options.ResponseType = "code id_token";
-        options.Scope.Add("apiApp");
-        options.Scope.Add("offline_access");
-
-        options.GetClaimsFromUserInfoEndpoint = true;
-        options.SaveTokens = true;
-    });
+// builder.Services.AddAuthentication(options =>
+//     {
+//         options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+//         options.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
+//     })
+//     .AddCookie()
+//     .AddOpenIdConnect(options =>
+//     {
+//         options.Authority = builder.Configuration["IdentityServerAddress"];
+//         options.RequireHttpsMetadata = false;
+//
+//         options.ClientId = "mvc";
+//         options.ClientSecret = "secret";
+//
+//         options.ResponseType = "code id_token";
+//         options.Scope.Add("apiApp");
+//         options.Scope.Add("offline_access");
+//
+//         options.GetClaimsFromUserInfoEndpoint = true;
+//         options.SaveTokens = true;
+//     });
 
 var app = builder.Build();
 
@@ -40,6 +45,8 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+app.UseCors("corspolicy");
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

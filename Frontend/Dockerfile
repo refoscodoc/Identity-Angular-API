@@ -12,8 +12,8 @@ RUN curl -fsSL https://deb.nodesource.com/setup_14.x | bash - \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /src
-COPY ["Frontend/Angular.WebUI/Angular.WebUI.csproj", "Angular.WebUI/"]
-RUN dotnet restore "Frontend/Angular.WebUI/Angular.WebUI.csproj"
+COPY ["Angular.WebUI/Angular.WebUI.csproj", "Angular.WebUI/"]
+RUN dotnet restore "Angular.WebUI/Angular.WebUI.csproj"
 COPY . .
 WORKDIR "/src/Angular.WebUI"
 RUN dotnet build "Angular.WebUI.csproj" -c Release -o /app/build

@@ -1,6 +1,7 @@
 using GoogleSheetsAPI;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using MongoDb.API.DataAccess;
 using MongoDb.API.Services;
 using Newtonsoft.Json;
@@ -42,16 +43,25 @@ builder.Services.AddAuthentication(options =>
         options.AuthorizationEndpoint += "?prompt=consent";
     });
 
-builder.Services.AddCors(options =>
+builder.Services.AddAuthentication(options =>
 {
-    options.AddDefaultPolicy(builder => {
-        builder.WithOrigins("https://localhost","https://accounts.google.com")
-            .AllowAnyHeader().AllowAnyMethod();
-    });
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(o =>
+{
+    o.Authority = builder.Configuration["IdentityServerAddress"];
+    o.Audience = "apiApp";
+    o.RequireHttpsMetadata = false;
 });
+
+builder.Services.AddCors(p => p.AddPolicy("corspolicy", builder =>
+{
+    builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+}));
 
 var app = builder.Build();
 
+app.UseCors("corspolicy");
 app.MapControllers();
 
 app.Run();

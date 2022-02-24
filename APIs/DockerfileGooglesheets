@@ -5,9 +5,8 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["APIs/GoogleSheetsAPI/GoogleSheetsAPI.csproj", "GoogleSheetsAPI/"]
-COPY ["APIs/MongoDb.API/MongoDb.API.csproj", "MongoDb.API/"]
-RUN dotnet restore "APIs/GoogleSheetsAPI/GoogleSheetsAPI.csproj"
+COPY ["GoogleSheetsAPI/GoogleSheetsAPI.csproj", "GoogleSheetsAPI/"]
+RUN dotnet restore "GoogleSheetsAPI/GoogleSheetsAPI.csproj"
 COPY . .
 WORKDIR "/src/GoogleSheetsAPI"
 RUN dotnet build "GoogleSheetsAPI.csproj" -c Release -o /app/build

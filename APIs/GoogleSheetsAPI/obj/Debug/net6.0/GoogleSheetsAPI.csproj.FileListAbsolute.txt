@@ -62,3 +62,10 @@
 /home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/GoogleSheetsAPI/bin/Debug/net6.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 /home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/GoogleSheetsAPI/bin/Debug/net6.0/Newtonsoft.Json.Bson.dll
 /home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/GoogleSheetsAPI/bin/Debug/net6.0/client_secrets_nope.json
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/GoogleSheetsAPI/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/GoogleSheetsAPI/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/GoogleSheetsAPI/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/GoogleSheetsAPI/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/GoogleSheetsAPI/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/GoogleSheetsAPI/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/GoogleSheetsAPI/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
