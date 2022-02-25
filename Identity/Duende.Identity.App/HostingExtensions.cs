@@ -12,9 +12,12 @@ internal static class HostingExtensions
     public static WebApplication ConfigureServices(this WebApplicationBuilder builder)
     {
         builder.Services.AddRazorPages();
+        
+        var sqlConnectionString = builder.Configuration.GetConnectionString("DataAccessMySqlProvider");
+        var serverVersion = new MySqlServerVersion(new Version(10, 6, 7));
 
         builder.Services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+            options.UseMySql(sqlConnectionString, serverVersion));
 
         builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
             .AddEntityFrameworkStores<ApplicationDbContext>()
