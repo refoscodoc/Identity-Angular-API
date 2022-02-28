@@ -11,7 +11,7 @@ export class DataService {
 
   // private serverUrl = `${environment.API_URL}/MongoDb`;
 
-  private serverUrl = "http://localhost:5002/MongoDb";
+  private serverUrl = "https://localhost:5002/MongoDb";
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })

@@ -14,6 +14,11 @@ import { TickerComponent } from './ticker/ticker.component';
 import { ChartComponent } from './chart/chart.component';
 import { MongoDbService } from "./mongoDbService/mongoDbService";
 import { SelectManufacturerComponent } from './select-manufacturer/select-manufacturer.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
+import { MfaComponent } from './mfa/mfa.component';
+import { LoggedoutComponent } from './loggedout/loggedout.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +30,11 @@ import { SelectManufacturerComponent } from './select-manufacturer/select-manufa
     TickerComponent,
     ChartComponent,
     SelectManufacturerComponent,
+    LoginComponent,
+    LogoutComponent,
+    MfaComponent,
+    LoggedoutComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -39,6 +49,12 @@ import { SelectManufacturerComponent } from './select-manufacturer/select-manufa
       { path: 'ticker', component: TickerComponent },
       { path: 'chart', component: ChartComponent },
       { path: 'app-select-manufacturer', component: SelectManufacturerComponent },
+      { path: "login", component: LoginComponent },
+      { path: "logout", component: LogoutComponent },
+      { path: "loggedout", component: LoggedoutComponent },
+      { path: "mfa", component: MfaComponent },
+      { path: "home", component: HomeComponent },
+      { path: "**", component: NotFoundComponent },
     ])
   ],
   providers: [MongoDbService],
