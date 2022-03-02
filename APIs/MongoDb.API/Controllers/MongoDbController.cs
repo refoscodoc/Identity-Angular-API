@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MongoDb.API.Models;
 using MongoDb.API.Services;
@@ -7,6 +8,7 @@ using Newtonsoft.Json;
 
 namespace MongoDb.API.Controllers;
 
+[Authorize]
 [Route("[controller]")]
 public class MongoDbController : Controller
 {
@@ -21,7 +23,7 @@ public class MongoDbController : Controller
         _business = business;
         // _httpClient = clientFactory.CreateClient("MongoDbApi");
     }
-
+    
     [HttpGet]
     public async Task<IActionResult> Get()
     {

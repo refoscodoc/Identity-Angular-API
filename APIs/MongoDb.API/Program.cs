@@ -1,13 +1,36 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.IdentityModel.Tokens;
 using MongoDb.API.DataAccess;
 using MongoDb.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// builder.Services.AddRazorPages();
-
 builder.Services.AddScoped<TickerContext>();
 builder.Services.AddScoped<BusinessProvider>();
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    // options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    // options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    // options.DefaultForbidScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    // options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    // options.DefaultSignOutScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    // options.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
+}).AddJwtBearer("Bearer", o =>
+{
+    o.Authority = builder.Configuration["IdentityServerAddress"];
+    o.Audience = "MongoDbApiApp";
+    o.Authority = "https://localhost:5003";
+    o.RequireHttpsMetadata = false;
+    o.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateAudience = false
+    };
+});
 
 builder.Services.AddControllers(x => x.AllowEmptyInputInBodyModelBinding = true);
 
@@ -35,9 +58,10 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-// app.UseAuthorization();
+app.UseAuthorization();
+app.UseAuthentication();
 
 // app.MapRazorPages();
-app.MapControllers();
+app.MapControllers().RequireAuthorization();
 
 app.Run();

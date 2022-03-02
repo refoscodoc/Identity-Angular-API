@@ -1,9 +1,8 @@
-using System.Linq;
 using System.Reflection;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Duende.Identity.App.Pages.Home;
+namespace Duende.Identity.App.Pages;
 
 [AllowAnonymous]
 public class Index : PageModel

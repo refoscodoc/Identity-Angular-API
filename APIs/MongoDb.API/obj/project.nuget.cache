@@ -1,10 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "kxvbgclDqqpJ6RokftujWaCDOnqZlw/kbdjqSqY8qZVihfLmGhW0wWKe4UfxCCSWsTysPUhypQZR5fS5ICneHQ==",
+  "dgSpecHash": "goaGtODDJUS8BiyPzYF2Tg796ybEXnS4ZzlEbcwiiQvz0JjCyn61568RO4FjNj8W8cEfMXdGzv6gx/iq9UsPbQ==",
   "success": true,
   "projectFilePath": "/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MongoDb.API/MongoDb.API.csproj",
   "expectedPackageFiles": [
     "/home/alberto/.nuget/packages/dnsclient/1.4.0/dnsclient.1.4.0.nupkg.sha512",
+    "/home/alberto/.nuget/packages/duende.identityserver/6.1.0-preview.1/duende.identityserver.6.1.0-preview.1.nupkg.sha512",
+    "/home/alberto/.nuget/packages/duende.identityserver.storage/6.1.0-preview.1/duende.identityserver.storage.6.1.0-preview.1.nupkg.sha512",
+    "/home/alberto/.nuget/packages/identitymodel/6.0.0/identitymodel.6.0.0.nupkg.sha512",
+    "/home/alberto/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/6.0.0/microsoft.aspnetcore.authentication.jwtbearer.6.0.0.nupkg.sha512",
+    "/home/alberto/.nuget/packages/microsoft.aspnetcore.authentication.openidconnect/6.0.2/microsoft.aspnetcore.authentication.openidconnect.6.0.2.nupkg.sha512",
+    "/home/alberto/.nuget/packages/microsoft.aspnetcore.dataprotection.abstractions/6.0.0/microsoft.aspnetcore.dataprotection.abstractions.6.0.0.nupkg.sha512",
+    "/home/alberto/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
     "/home/alberto/.nuget/packages/microsoft.entityframeworkcore/6.0.2/microsoft.entityframeworkcore.6.0.2.nupkg.sha512",
     "/home/alberto/.nuget/packages/microsoft.entityframeworkcore.abstractions/6.0.2/microsoft.entityframeworkcore.abstractions.6.0.2.nupkg.sha512",
     "/home/alberto/.nuget/packages/microsoft.entityframeworkcore.analyzers/6.0.2/microsoft.entityframeworkcore.analyzers.6.0.2.nupkg.sha512",
@@ -16,6 +23,11 @@
     "/home/alberto/.nuget/packages/microsoft.extensions.logging.abstractions/6.0.0/microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "/home/alberto/.nuget/packages/microsoft.extensions.options/6.0.0/microsoft.extensions.options.6.0.0.nupkg.sha512",
     "/home/alberto/.nuget/packages/microsoft.extensions.primitives/6.0.0/microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "/home/alberto/.nuget/packages/microsoft.identitymodel.jsonwebtokens/6.10.0/microsoft.identitymodel.jsonwebtokens.6.10.0.nupkg.sha512",
+    "/home/alberto/.nuget/packages/microsoft.identitymodel.logging/6.10.0/microsoft.identitymodel.logging.6.10.0.nupkg.sha512",
+    "/home/alberto/.nuget/packages/microsoft.identitymodel.protocols/6.10.0/microsoft.identitymodel.protocols.6.10.0.nupkg.sha512",
+    "/home/alberto/.nuget/packages/microsoft.identitymodel.protocols.openidconnect/6.10.0/microsoft.identitymodel.protocols.openidconnect.6.10.0.nupkg.sha512",
+    "/home/alberto/.nuget/packages/microsoft.identitymodel.tokens/6.10.0/microsoft.identitymodel.tokens.6.10.0.nupkg.sha512",
     "/home/alberto/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
     "/home/alberto/.nuget/packages/mongodb.bson/2.14.1/mongodb.bson.2.14.1.nupkg.sha512",
     "/home/alberto/.nuget/packages/mongodb.driver/2.14.1/mongodb.driver.2.14.1.nupkg.sha512",
@@ -28,7 +40,9 @@
     "/home/alberto/.nuget/packages/system.buffers/4.5.1/system.buffers.4.5.1.nupkg.sha512",
     "/home/alberto/.nuget/packages/system.collections.immutable/6.0.0/system.collections.immutable.6.0.0.nupkg.sha512",
     "/home/alberto/.nuget/packages/system.diagnostics.diagnosticsource/6.0.0/system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
-    "/home/alberto/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "/home/alberto/.nuget/packages/system.identitymodel.tokens.jwt/6.10.0/system.identitymodel.tokens.jwt.6.10.0.nupkg.sha512",
+    "/home/alberto/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "/home/alberto/.nuget/packages/system.security.cryptography.cng/4.5.0/system.security.cryptography.cng.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

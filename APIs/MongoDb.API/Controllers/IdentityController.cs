@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MariaDb.API.Controllers;
+namespace MongoDb.API.Controllers;
 
 [Route("identity")]
 [Authorize]

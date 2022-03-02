@@ -1,10 +1,12 @@
 using System.Net;
 using MariaDb.API.Models;
 using MariaDb.API.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MariaDb.API.Controllers;
 
+[Authorize]
 [Route("api/[controller]")]
 public class ProductController : Controller
 {

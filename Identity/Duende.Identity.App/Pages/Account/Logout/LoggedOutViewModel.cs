@@ -2,7 +2,7 @@
 // See LICENSE in the project root for license information.
 
 
-namespace Duende.Identity.App.Pages.Logout;
+namespace Duende.Identity.App.Pages.Account.Logout;
 
 public class LoggedOutViewModel
 {

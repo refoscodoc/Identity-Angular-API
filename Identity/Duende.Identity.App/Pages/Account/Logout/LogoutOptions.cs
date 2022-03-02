@@ -1,4 +1,4 @@
-namespace Duende.Identity.App.Pages.Logout;
+namespace Duende.Identity.App.Pages.Account.Logout;
 
 public class LogoutOptions
 {

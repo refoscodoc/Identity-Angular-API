@@ -1,8 +1,10 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MongoDb.API.Models;
 
 namespace GoogleSheetsAPI.Controllers;
 
+[Authorize]
 [Route("[controller]")]
 public class GoogleSheetsController : Controller
 {

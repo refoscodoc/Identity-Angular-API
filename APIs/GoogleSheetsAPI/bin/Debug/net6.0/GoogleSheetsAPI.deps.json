@@ -26,6 +26,30 @@
           }
         }
       },
+      "Duende.IdentityServer/6.1.0-preview.1": {
+        "dependencies": {
+          "Duende.IdentityServer.Storage": "6.1.0-preview.1",
+          "Microsoft.AspNetCore.Authentication.OpenIdConnect": "6.0.2"
+        },
+        "runtime": {
+          "lib/net6.0/Duende.IdentityServer.dll": {
+            "assemblyVersion": "6.1.0.0",
+            "fileVersion": "6.1.0.0"
+          }
+        }
+      },
+      "Duende.IdentityServer.Storage/6.1.0-preview.1": {
+        "dependencies": {
+          "IdentityModel": "6.0.0",
+          "Microsoft.AspNetCore.DataProtection.Abstractions": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Duende.IdentityServer.Storage.dll": {
+            "assemblyVersion": "6.1.0.0",
+            "fileVersion": "6.1.0.0"
+          }
+        }
+      },
       "Google.Apis/1.55.0": {
         "dependencies": {
           "Google.Apis.Core": "1.55.0"
@@ -76,6 +100,14 @@
           }
         }
       },
+      "IdentityModel/6.0.0": {
+        "runtime": {
+          "lib/net6.0/IdentityModel.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.0.0"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Authentication.Google/6.0.2": {
         "runtime": {
           "lib/net6.0/Microsoft.AspNetCore.Authentication.Google.dll": {
@@ -95,6 +127,18 @@
           }
         }
       },
+      "Microsoft.AspNetCore.Authentication.OpenIdConnect/6.0.2": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.10.0"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.OpenIdConnect.dll": {
+            "assemblyVersion": "6.0.2.0",
+            "fileVersion": "6.0.222.6412"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.DataProtection.Abstractions/6.0.0": {},
       "Microsoft.AspNetCore.JsonPatch/6.0.2": {
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
@@ -436,6 +480,9 @@
       "System.Security.Cryptography.Cng/4.5.0": {},
       "MongoDb.API/1.0.0": {
         "dependencies": {
+          "Duende.IdentityServer": "6.1.0-preview.1",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.0",
+          "Microsoft.AspNetCore.Authentication.OpenIdConnect": "6.0.2",
           "Microsoft.EntityFrameworkCore": "6.0.2",
           "MongoDB.Driver": "2.14.1",
           "Newtonsoft.Json": "13.0.1",
@@ -459,6 +506,20 @@
       "sha512": "sha512-CO1NG1zQdV0nEAXmr/KppLZ0S1qkaPwV0kPX5YPgmYBtrBVh1XMYHM54IXy3RBJu1k4thFtpzwo4HNHqxiuFYw==",
       "path": "dnsclient/1.4.0",
       "hashPath": "dnsclient.1.4.0.nupkg.sha512"
+    },
+    "Duende.IdentityServer/6.1.0-preview.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-02XLFa/fMLFdQ9avDuCZGqNkVyesZfpxqLsznWAl+XrLNMANZn+GYw0nHik8xcWzdG1QE7Zn4FyGW2NOqtZSDg==",
+      "path": "duende.identityserver/6.1.0-preview.1",
+      "hashPath": "duende.identityserver.6.1.0-preview.1.nupkg.sha512"
+    },
+    "Duende.IdentityServer.Storage/6.1.0-preview.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ca/F2IyS9f7SrVW0dNi16AepiNAAMbfAZ+066ranaP3i6zLK4NXat7D9rhDd/UKF+enx7eePuxIQ6PBpwh7TUw==",
+      "path": "duende.identityserver.storage/6.1.0-preview.1",
+      "hashPath": "duende.identityserver.storage.6.1.0-preview.1.nupkg.sha512"
     },
     "Google.Apis/1.55.0": {
       "type": "package",
@@ -488,6 +549,13 @@
       "path": "google.apis.sheets.v4/1.55.0.2371",
       "hashPath": "google.apis.sheets.v4.1.55.0.2371.nupkg.sha512"
     },
+    "IdentityModel/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eVHCR7a6m/dm5RFcBzE3qs/Jg5j9R5Rjpu8aTOv9e4AFvaQtBXb5ah7kmwU+YwA0ufRwz4wf1hnIvsD2hSnI4g==",
+      "path": "identitymodel/6.0.0",
+      "hashPath": "identitymodel.6.0.0.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Authentication.Google/6.0.2": {
       "type": "package",
       "serviceable": true,
@@ -501,6 +569,20 @@
       "sha512": "sha512-eIhpX25uUn33Ornnh718V2G/nESvk3TNX2FjTarv634GLfE50Fhz2geJ/QYpSmFaUIQ1hkZPfd9i0LcpZ9bfLQ==",
       "path": "microsoft.aspnetcore.authentication.jwtbearer/6.0.0",
       "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.6.0.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.OpenIdConnect/6.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kTUd9SZD7bsYzqJ9RWHXYHmkZ1Z1qJ4EyX7vVzCtQwSFsLZpiot6JlHO+RELv/5Mt4QFuuHiFQdg6ovH8Ec0Tw==",
+      "path": "microsoft.aspnetcore.authentication.openidconnect/6.0.2",
+      "hashPath": "microsoft.aspnetcore.authentication.openidconnect.6.0.2.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.DataProtection.Abstractions/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Z/UU4NEBm5UgNufJmw+j5baW26ytCOIZ0G7sZocPaOzsUeBon1bkM3lSMNZQG2GmDjAIVP2XMSODf2jzSGbibw==",
+      "path": "microsoft.aspnetcore.dataprotection.abstractions/6.0.0",
+      "hashPath": "microsoft.aspnetcore.dataprotection.abstractions.6.0.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.JsonPatch/6.0.2": {
       "type": "package",

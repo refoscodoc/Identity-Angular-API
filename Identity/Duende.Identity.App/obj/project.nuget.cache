@@ -1,14 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "8/SBoXZAPkCbpforBwhwBEsaS0PGt5d3XI6ukO9GVKDfLIHfHrU/9AtJVk7d64jGdfUAj2/1DID/clP/k1mP+w==",
+  "dgSpecHash": "w6ODKCrXhU1YSLo9oHDHB0oBHjWN53VCHyu4/0qfH9Mlt9iuxMI1nYjpeQJGC1O7sYIA8barI3pmreaAQZTtwg==",
   "success": true,
   "projectFilePath": "/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/Identity/Duende.Identity.App/Duende.Identity.App.csproj",
   "expectedPackageFiles": [
+    "/home/alberto/.nuget/packages/duende.bff/1.1.3/duende.bff.1.1.3.nupkg.sha512",
     "/home/alberto/.nuget/packages/duende.identityserver/6.0.0/duende.identityserver.6.0.0.nupkg.sha512",
     "/home/alberto/.nuget/packages/duende.identityserver.aspnetidentity/6.0.0/duende.identityserver.aspnetidentity.6.0.0.nupkg.sha512",
     "/home/alberto/.nuget/packages/duende.identityserver.storage/6.0.0/duende.identityserver.storage.6.0.0.nupkg.sha512",
     "/home/alberto/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/alberto/.nuget/packages/identitymodel/6.0.0/identitymodel.6.0.0.nupkg.sha512",
+    "/home/alberto/.nuget/packages/identitymodel.aspnetcore/4.1.2/identitymodel.aspnetcore.4.1.2.nupkg.sha512",
     "/home/alberto/.nuget/packages/microsoft.aspnetcore.authentication.google/6.0.0/microsoft.aspnetcore.authentication.google.6.0.0.nupkg.sha512",
     "/home/alberto/.nuget/packages/microsoft.aspnetcore.authentication.openidconnect/6.0.0/microsoft.aspnetcore.authentication.openidconnect.6.0.0.nupkg.sha512",
     "/home/alberto/.nuget/packages/microsoft.aspnetcore.cryptography.internal/6.0.0/microsoft.aspnetcore.cryptography.internal.6.0.0.nupkg.sha512",

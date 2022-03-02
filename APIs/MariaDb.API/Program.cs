@@ -4,6 +4,7 @@ using MariaDb.API.Services;
 using Microsoft.EntityFrameworkCore;
 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,8 +29,13 @@ builder.Services.AddAuthentication(options =>
 }).AddJwtBearer(o =>
 {
     o.Authority = builder.Configuration["IdentityServerAddress"];
-    o.Audience = "apiApp";
+    o.Audience = "MariaApiApp";
+    o.Authority = "https://localhost:5003";
     o.RequireHttpsMetadata = false;
+    o.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateAudience = false
+    };
 });
 
 builder.Services.AddCors(options =>
@@ -62,15 +68,16 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-
+app.UseCors("default");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseAuthentication();
 
 // app.MapRazorPages();
-app.MapControllers();
+app.MapControllers().RequireAuthorization();
 
 app.Run();

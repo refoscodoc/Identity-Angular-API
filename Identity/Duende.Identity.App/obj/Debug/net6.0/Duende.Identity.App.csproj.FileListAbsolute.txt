@@ -76,3 +76,5 @@
 /home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/Identity/Duende.Identity.App/bin/Debug/net6.0/keys/is-signing-key-08D2F2449FDF40E119E4FE913230E70B.json
 /home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/Identity/Duende.Identity.App/bin/Debug/net6.0/MySqlConnector.dll
 /home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/Identity/Duende.Identity.App/bin/Debug/net6.0/Pomelo.EntityFrameworkCore.MySql.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/Identity/Duende.Identity.App/bin/Debug/net6.0/Duende.BFF.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/Identity/Duende.Identity.App/bin/Debug/net6.0/IdentityModel.AspNetCore.dll

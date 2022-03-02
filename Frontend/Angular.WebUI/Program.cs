@@ -1,5 +1,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using Angular.WebUI;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 
 IdentityToken.RequestToken();
 
@@ -12,10 +14,10 @@ builder.Services.AddHttpClient("MongoDbApi", client =>
     client.BaseAddress = new Uri("https://localhost:5002/"); // MongoDb.API port
 });
 
-// builder.Services.AddCors(p => p.AddPolicy("corspolicy", builder =>
-// {
-//     builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
-// }));
+builder.Services.AddCors(p => p.AddPolicy("corspolicy", builder =>
+{
+    builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+}));
 
 builder.Services.AddControllersWithViews();
 
@@ -25,6 +27,9 @@ builder.Services.AddAuthentication(options =>
     {
         options.DefaultScheme = "Cookies";
         options.DefaultChallengeScheme = "oidc";
+        // options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+        // options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+        // options.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
     })
     .AddCookie("Cookies")
     .AddOpenIdConnect("oidc", options =>
@@ -51,7 +56,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-// app.UseCors("corspolicy");
+app.UseCors("corspolicy");
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

@@ -49,3 +49,14 @@
 /home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MongoDb.API/bin/Debug/net6.0/Swashbuckle.AspNetCore.Swagger.dll
 /home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MongoDb.API/bin/Debug/net6.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MongoDb.API/obj/Debug/net6.0/MongoDb.API.MvcApplicationPartsAssemblyInfo.cs
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MongoDb.API/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MongoDb.API/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MongoDb.API/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MongoDb.API/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MongoDb.API/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MongoDb.API/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MongoDb.API/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MongoDb.API/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MongoDb.API/bin/Debug/net6.0/Duende.IdentityServer.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MongoDb.API/bin/Debug/net6.0/Duende.IdentityServer.Storage.dll
+/home/alberto/Documents/C Sharp/IdentityAngularAPIApp/Identity-Angular-API/APIs/MongoDb.API/bin/Debug/net6.0/IdentityModel.dll

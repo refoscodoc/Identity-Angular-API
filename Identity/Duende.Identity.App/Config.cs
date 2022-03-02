@@ -74,6 +74,26 @@ public static class Config
                     IdentityServerConstants.StandardScopes.Profile,
                     "api1"
                 }
+            },
+            new Client
+            {
+                ClientId = "ng",
+                ClientName = "Angular Client",
+                AllowedGrantTypes = GrantTypes.Implicit,
+                AllowAccessTokensViaBrowser = true,
+                RequireConsent = true,
+
+                RedirectUris = { "http://localhost:5002/callback" },
+                PostLogoutRedirectUris = { "http://localhost:5002/home" },
+                AllowedCorsOrigins = { "http://localhost:5002" },
+
+                AllowedScopes =
+                {
+                    IdentityServerConstants.StandardScopes.OpenId,
+                    IdentityServerConstants.StandardScopes.Profile,
+                    "apiApp"
+                },
+
             }
             
         };

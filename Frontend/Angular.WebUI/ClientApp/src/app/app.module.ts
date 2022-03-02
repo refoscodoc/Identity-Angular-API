@@ -5,6 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { HighchartsChartModule } from "highcharts-angular";
 
+import {
+  FacebookLoginProvider,
+  SocialLoginModule,
+  GoogleLoginProvider,
+  SocialAuthServiceConfig, SocialAuthService,
+} from 'angularx-social-login';
+
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
@@ -19,6 +26,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { MfaComponent } from './mfa/mfa.component';
 import { LoggedoutComponent } from './loggedout/loggedout.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AuthenticationPageComponent } from './authentication-page/authentication-page.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +43,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     MfaComponent,
     LoggedoutComponent,
     NotFoundComponent,
+    AuthenticationPageComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -54,10 +63,24 @@ import { NotFoundComponent } from './not-found/not-found.component';
       { path: "loggedout", component: LoggedoutComponent },
       { path: "mfa", component: MfaComponent },
       { path: "home", component: HomeComponent },
+      { path: "authentication", component: AuthenticationPageComponent },
       { path: "**", component: NotFoundComponent },
     ])
   ],
-  providers: [MongoDbService],
+  providers: [{
+    provide: 'SocialAuthServiceConfig',
+    useValue: {
+      autoLogin: false,
+      providers: [
+        {
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider('318562243956-5n4e3nj5gqffhc1mpa4hsohpfmhjbjqe.apps.googleusercontent.com'),
+        },
+      ],
+    } as SocialAuthServiceConfig,
+  },
+    SocialAuthService,
+    MongoDbService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
