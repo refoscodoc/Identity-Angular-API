@@ -1,6 +1,4 @@
-using System;
-
-namespace Duende.Identity.App.Pages.Login;
+namespace Duende.Identity.App.Pages.Account.Login;
 
 public class LoginOptions
 {

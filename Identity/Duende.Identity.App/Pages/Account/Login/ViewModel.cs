@@ -2,11 +2,7 @@
 // See LICENSE in the project root for license information.
 
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace Duende.Identity.App.Pages.Login;
+namespace Duende.Identity.App.Pages.Account.Login;
 
 public class ViewModel
 {

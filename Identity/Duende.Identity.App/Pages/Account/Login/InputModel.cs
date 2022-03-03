@@ -4,7 +4,7 @@
 
 using System.ComponentModel.DataAnnotations;
 
-namespace Duende.Identity.App.Pages.Login;
+namespace Duende.Identity.App.Pages.Account.Login;
 
 public class InputModel
 {

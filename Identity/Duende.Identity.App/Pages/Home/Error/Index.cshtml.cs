@@ -1,8 +1,9 @@
+using Duende.Identity.App.Pages.Ciba;
 using Duende.IdentityServer.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Duende.Identity.App.Pages.Home.Error;
+namespace Duende.Identity.App.Pages.Home;
 
 [AllowAnonymous]
 [SecurityHeaders]

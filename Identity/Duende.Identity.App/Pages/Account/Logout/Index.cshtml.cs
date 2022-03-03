@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Duende.Identity.App.Pages.Account.Logout;
+namespace Duende.Identity.App.Pages.Account;
 
 [SecurityHeaders]
 [AllowAnonymous]
