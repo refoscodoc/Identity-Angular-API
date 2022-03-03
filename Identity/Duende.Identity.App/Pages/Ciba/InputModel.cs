@@ -2,8 +2,6 @@
 // See LICENSE in the project root for license information.
 
 
-using System.Collections.Generic;
-
 namespace Duende.Identity.App.Pages.Ciba;
 
 public class InputModel

@@ -1,15 +1,16 @@
 using Duende.IdentityServer.Services;
+using Duende.Identity.App.Pages;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Duende.Identity.App.Pages.Account;
+namespace Duende.Identity.App.Pages.Account.Logout;
 
 [SecurityHeaders]
 [AllowAnonymous]
 public class LoggedOut : PageModel
 {
     private readonly IIdentityServerInteractionService _interactionService;
-
+        
     public LoggedOutViewModel View { get; set; }
 
     public LoggedOut(IIdentityServerInteractionService interactionService)

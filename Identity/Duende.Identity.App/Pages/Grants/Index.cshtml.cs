@@ -1,11 +1,9 @@
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 using Duende.IdentityServer.Events;
 using Duende.IdentityServer.Extensions;
 using Duende.IdentityServer.Services;
 using Duende.IdentityServer.Stores;
+using Duende.Identity.App.Pages;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -33,7 +31,7 @@ public class Index : PageModel
     }
 
     public ViewModel View { get; set; }
-
+        
     public async Task OnGet()
     {
         var grants = await _interaction.GetAllUserGrantsAsync();
@@ -69,7 +67,9 @@ public class Index : PageModel
         };
     }
 
-    [BindProperty] [Required] public string ClientId { get; set; }
+    [BindProperty]
+    [Required]
+    public string ClientId { get; set; }
 
     public async Task<IActionResult> OnPost()
     {

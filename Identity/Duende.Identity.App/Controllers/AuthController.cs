@@ -1,9 +1,11 @@
 using Duende.Identity.App.Data;
 using Duende.Identity.App.Models;
 using Duende.Identity.App.Pages;
+// using Duende.Identity.App.Pages;
 using Duende.IdentityServer.Events;
 using Duende.IdentityServer.Services;
 using Duende.IdentityServer.Stores;
+using Duende.Identity.App.Pages;
 // using IdentityServer4.MicroService.Controllers;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;

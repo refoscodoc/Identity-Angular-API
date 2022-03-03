@@ -1,3 +1,4 @@
+using Duende.Identity.App.Pages;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 

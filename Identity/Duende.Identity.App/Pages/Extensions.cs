@@ -2,14 +2,10 @@
 // See LICENSE in the project root for license information.
 
 
-using System;
-using System.Threading.Tasks;
 using Duende.IdentityServer.Models;
 using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Duende.Identity.App.Pages;
 
@@ -42,6 +38,6 @@ public static class Extensions
         page.HttpContext.Response.StatusCode = 200;
         page.HttpContext.Response.Headers["Location"] = "";
 
-        return page.RedirectToPage("/Redirect/Index", new {RedirectUri = redirectUri});
+        return page.RedirectToPage("/Redirect/Index", new { RedirectUri = redirectUri });
     }
 }
